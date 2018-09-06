@@ -8,4 +8,5 @@ public interface RelogioServerInterface extends Remote {
 	
 	public LocalTime getHora() throws RemoteException;
 	
+	public void atualizarHora(LocalTime hora) throws RemoteException;
 }
