@@ -71,6 +71,9 @@ tmp/
 *.bak
 *.swp
 *~.nib
+*.class
+*.classpath
+*.project
 local.properties
 .settings/
 .loadpath
