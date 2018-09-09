@@ -9,18 +9,19 @@ public class RelogioServerInterfaceImpl extends UnicastRemoteObject implements R
 	private static final long serialVersionUID = 1L;
 
 	private LocalTime horaLocal;
-	
-	protected RelogioServerInterfaceImpl() throws RemoteException {
 
+	public RelogioServerInterfaceImpl(LocalTime horaLocal) throws RemoteException {
+		this.horaLocal = horaLocal;
 	}
 
 	@Override
 	public LocalTime getHora() throws RemoteException {
-		return LocalTime.now();
+		return horaLocal;
 	}
 
 	@Override
 	public void atualizarHora(LocalTime hora) throws RemoteException {
+		this.horaLocal = hora;
 	}
 
 }

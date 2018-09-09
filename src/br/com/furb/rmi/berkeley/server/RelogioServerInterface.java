@@ -6,7 +6,7 @@ import java.time.LocalTime;
 
 public interface RelogioServerInterface extends Remote {
 	
-	public LocalTime getHora() throws RemoteException;
+	LocalTime getHora() throws RemoteException;
 	
-	public void atualizarHora(LocalTime hora) throws RemoteException;
+	void atualizarHora(LocalTime hora) throws RemoteException;
 }
