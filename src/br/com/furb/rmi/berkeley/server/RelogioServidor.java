@@ -1,4 +1,4 @@
-package br.com.furb.rmi.berkeley.client;
+package br.com.furb.rmi.berkeley.server;
 
 import java.time.LocalTime;
 

@@ -1,4 +1,4 @@
-package br.com.furb.rmi.berkeley.server;
+package br.com.furb.rmi.berkeley.client;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -22,7 +22,7 @@ public class RelogioServerInterfaceImpl extends UnicastRemoteObject implements R
 	@Override
 	public void atualizarHora(LocalTime hora) throws RemoteException {
 		this.horaLocal = hora;
-		System.out.println(String.format("Hora client atualizada: %s", horaLocal));
+		System.out.println(String.format("Hora server atualizada: %s", horaLocal));
 	}
 
 }

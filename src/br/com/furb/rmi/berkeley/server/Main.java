@@ -1,6 +1,6 @@
-package br.com.furb.rmi.berkeley.client;
+package br.com.furb.rmi.berkeley.server;
 
-import br.com.furb.rmi.berkeley.server.RelogioServerInterface;
+import br.com.furb.rmi.berkeley.client.RelogioServerInterface;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;

@@ -1,4 +1,4 @@
-package br.com.furb.rmi.berkeley.server;
+package br.com.furb.rmi.berkeley.client;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
