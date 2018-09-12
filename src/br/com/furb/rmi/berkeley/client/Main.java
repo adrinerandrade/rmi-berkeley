@@ -7,6 +7,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    private static final Set<String> hosts = Set.of(
+    private static final List<String> hosts = Arrays.asList(
             "localhost"
     );
 
