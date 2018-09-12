@@ -21,23 +21,19 @@ public class Main {
     public static void main(String[] args) {
         RelogioServidor relogioServidor = new RelogioServidor(LocalTime.now());
         List<Diferenca> diferencas = executarRemotamente(relogio -> {
-            try {
-                LocalTime horaServidor = relogioServidor.getHora();
-                return new Diferenca(relogio, relogio.getHora().toSecondOfDay() - horaServidor.toSecondOfDay());
-            } catch (RemoteException e) {
-                throw new RuntimeException(e);
-            }
+            int diferenca = getHora(relogio).toSecondOfDay() - relogioServidor.getHora().toSecondOfDay();
+            return new Diferenca(relogio, diferenca);
         });
 
         int soma = diferencas.stream().mapToInt(Diferenca::getDiferenca).sum();
         int media = soma / (hosts.size() + 1);
 
         diferencas.stream()
-                .map(diferenca -> {
+                .forEach(diferenca -> {
                     int diferencaParaMedia = (-diferenca.getDiferenca()) + media;
-                    LocalTime hora = diferenca.getRelogio().getHora();
-
-                })
+                    RelogioServerInterface relogio = diferenca.getRelogio();
+                    setHora(relogio, getHora(relogio).plusSeconds(diferencaParaMedia));
+                });
     }
 
     private static <T> List<T> executarRemotamente(Function<RelogioServerInterface, T> action) {
@@ -56,9 +52,17 @@ public class Main {
         }
     }
 
-    private LocalTime getHora(RelogioServerInterface relogio) {
+    private static LocalTime getHora(RelogioServerInterface relogio) {
         try {
             return relogio.getHora();
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void setHora(RelogioServerInterface relogio, LocalTime time) {
+        try {
+            relogio.atualizarHora(time);
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }
