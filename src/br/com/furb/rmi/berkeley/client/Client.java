@@ -4,7 +4,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.time.LocalTime;
 
-public class App {
+public class Client {
     public static void main(String[] args) {
         try {
             RelogioServerInterface sdrmi = new RelogioServerInterfaceImpl(LocalTime.of(10, 0));

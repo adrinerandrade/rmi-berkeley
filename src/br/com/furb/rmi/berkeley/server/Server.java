@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Main {
+public class Server {
 
     private static final List<String> hosts = Arrays.asList(
             "201.54.201.32"
@@ -41,7 +41,7 @@ public class Main {
 
     private static <T> List<T> executarRemotamente(Function<RelogioServerInterface, T> action) {
         return hosts.stream()
-                .map(Main::obterImplementacao)
+                .map(Server::obterImplementacao)
                 .map(action)
                 .collect(Collectors.toList());
     }
