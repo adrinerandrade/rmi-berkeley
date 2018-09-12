@@ -4,6 +4,10 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.time.LocalTime;
 
+/**
+ * @author Michel Tank
+ * @author Adriner Andrade
+ */
 public interface RelogioServerInterface extends Remote {
 	
 	LocalTime getHora() throws RemoteException;

@@ -2,6 +2,10 @@ package br.com.furb.rmi.berkeley.server;
 
 import br.com.furb.rmi.berkeley.client.RelogioServerInterface;
 
+/**
+ * @author Michel Tank
+ * @author Adriner Andrade
+ */
 public class Diferenca {
 
     private RelogioServerInterface relogio;

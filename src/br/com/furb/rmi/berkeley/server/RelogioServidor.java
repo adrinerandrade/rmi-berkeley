@@ -2,6 +2,10 @@ package br.com.furb.rmi.berkeley.server;
 
 import java.time.LocalTime;
 
+/**
+ * @author Michel Tank
+ * @author Adriner Andrade
+ */
 public class RelogioServidor {
 
     private LocalTime time;

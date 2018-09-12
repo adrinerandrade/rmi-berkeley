@@ -4,6 +4,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.time.LocalTime;
 
+/**
+ * @author Michel Tank
+ * @author Adriner Andrade
+ */
 public class Client {
 
     public static void main(String[] args) {

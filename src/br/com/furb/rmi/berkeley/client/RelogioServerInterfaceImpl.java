@@ -4,6 +4,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.time.LocalTime;
 
+/**
+ * @author Michel Tank
+ * @author Adriner Andrade
+ */
 public class RelogioServerInterfaceImpl extends UnicastRemoteObject implements RelogioServerInterface {
 
 	private static final long serialVersionUID = 1L;
