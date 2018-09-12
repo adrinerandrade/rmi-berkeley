@@ -16,11 +16,11 @@ import java.util.stream.Collectors;
 public class Main {
 
     private static final List<String> hosts = Arrays.asList(
-            "localhost"
+            "201.54.201.32"
     );
 
     public static void main(String[] args) {
-        RelogioServidor relogioServidor = new RelogioServidor(LocalTime.now());
+        RelogioServidor relogioServidor = new RelogioServidor(LocalTime.of(9, 0));
         List<Diferenca> diferencas = executarRemotamente(relogio -> {
             int diferenca = getHora(relogio).toSecondOfDay() - relogioServidor.getHora().toSecondOfDay();
             return new Diferenca(relogio, diferenca);

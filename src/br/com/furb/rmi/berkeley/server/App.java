@@ -7,7 +7,7 @@ import java.time.LocalTime;
 public class App {
     public static void main(String[] args) {
         try {
-            RelogioServerInterface sdrmi = new RelogioServerInterfaceImpl(LocalTime.now());
+            RelogioServerInterface sdrmi = new RelogioServerInterfaceImpl(LocalTime.of(10, 0));
             Registry registry = LocateRegistry.getRegistry();
             registry.rebind("RelogioServerInterfaceImpl", sdrmi);
             System.out.println("Servidor Relogio" + sdrmi + " registrado e pronto para aceitar solicitações.");
