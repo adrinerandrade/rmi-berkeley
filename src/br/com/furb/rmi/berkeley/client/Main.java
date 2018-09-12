@@ -9,7 +9,6 @@ import java.rmi.registry.Registry;
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -35,6 +34,9 @@ public class Main {
                     RelogioServerInterface relogio = diferenca.getRelogio();
                     setHora(relogio, getHora(relogio).plusSeconds(diferencaParaMedia));
                 });
+        relogioServidor.setTime(relogioServidor.getHora().plusSeconds(media));
+
+        System.out.println(String.format("Hora servidor: %s", relogioServidor.getHora()));
     }
 
     private static <T> List<T> executarRemotamente(Function<RelogioServerInterface, T> action) {
