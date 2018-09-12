@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class Server {
 
     private static final List<String> hosts = Arrays.asList(
-            "201.54.201.32"
+            "localhost"
     );
 
     public static void main(String[] args) {
