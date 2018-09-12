@@ -22,7 +22,7 @@ public class RelogioServerInterfaceImpl extends UnicastRemoteObject implements R
 	@Override
 	public void atualizarHora(LocalTime hora) throws RemoteException {
 		this.horaLocal = hora;
-		System.out.println(String.format("Hora server atualizada: %s", horaLocal));
+		System.out.println(String.format("Hora client atualizada: %s", horaLocal));
 	}
 
 }

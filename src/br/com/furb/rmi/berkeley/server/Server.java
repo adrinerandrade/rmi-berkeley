@@ -19,7 +19,8 @@ public class Server {
     );
 
     public static void main(String[] args) {
-        RelogioServidor relogioServidor = new RelogioServidor(LocalTime.of(9, 0));
+        RelogioServidor relogioServidor = new RelogioServidor(LocalTime.of(18, 0));
+        System.out.println("Hora inicial servidor: " + relogioServidor.getHora());
         List<Diferenca> diferencas = executarRemotamente(relogio -> {
             int diferenca = getHora(relogio).toSecondOfDay() - relogioServidor.getHora().toSecondOfDay();
             return new Diferenca(relogio, diferenca);
@@ -36,7 +37,7 @@ public class Server {
                 });
         relogioServidor.setTime(relogioServidor.getHora().plusSeconds(media));
 
-        System.out.println(String.format("Hora servidor: %s", relogioServidor.getHora()));
+        System.out.println(String.format("Hora servidor atualizada: %s", relogioServidor.getHora()));
     }
 
     private static <T> List<T> executarRemotamente(Function<RelogioServerInterface, T> action) {
